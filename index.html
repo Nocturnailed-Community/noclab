@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noc Lab | Open Source IoT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .terminal-window {
+            background: #020617;
+            border: 1px solid #1e293b;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .active-log-tab {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+
+        /* Filter untuk mengubah tulisan HITAM log menjadi PUTIH agar terlihat di dark mode */
+        .log-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: invert(1) hue-rotate(180deg) brightness(1.5) contrast(0.9);
+            background: transparent;
+        }
+
+        .iframe-container {
+            position: relative;
+            background-color: #020617; 
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .card-shadow {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass border-b border-slate-800 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-microscope text-white"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight">Noc <span class="text-sky-400">Lab</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#libraries" class="hover:text-sky-400 transition">Libraries</a>
+                <a href="#logs" class="hover:text-sky-400 transition">Live Log</a>
+                <a href="#nocsignal" class="hover:text-sky-400 transition">NocSignal</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://t.me/nocturnailed" target="_blank" class="text-slate-400 hover:text-sky-400 transition text-xl">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://nocturnailed.com" target="_blank" class="bg-sky-600 hover:bg-sky-500 px-5 py-2 rounded-full text-sm font-semibold transition flex items-center">
+                    Belajar IoT <i class="fas fa-graduation-cap ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-24 pb-12 px-6 text-center">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-bold mb-6 tracking-widest uppercase">
+            Riset & Pengembangan IoT
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+            Pusat <span class="gradient-text">Noc Lab</span>
+        </h1>
+        <p class="text-slate-400 max-w-2xl mx-auto text-lg mb-8">
+            Ekosistem riset open source untuk pengembangan library IoT dan sistem cerdas berbasis Arduino.
+        </p>
+        <div class="flex justify-center">
+            <a href="https://t.me/nocturnailed" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#24A1DE]/10 border border-[#24A1DE]/30 text-[#24A1DE] rounded-2xl hover:bg-[#24A1DE]/20 transition font-semibold">
+                <i class="fab fa-telegram-plane mr-2 text-xl"></i> Gabung Telegram Noc Lab
+            </a>
+        </div>
+    </header>
+
+    <!-- Dev Status & Embedded Logs -->
+    <section id="logs" class="py-12 px-6 max-w-7xl mx-auto">
+        <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-2">Build Monitoring</h2>
+                <p class="text-slate-500 text-sm">Status rilis otomatis dari server library Arduino (Live).</p>
+            </div>
+            <div class="flex gap-2 bg-slate-900 p-1.5 rounded-xl border border-slate-800">
+                <button onclick="switchEmbed('nocml')" id="btn-nocml" class="px-4 py-2 rounded-lg text-xs font-bold transition">NOCML</button>
+                <button onclick="switchEmbed('nockinematics')" id="btn-nockinematics" class="px-4 py-2 rounded-lg text-xs font-bold transition">NOCKINEMATICS</button>
+                <button onclick="switchEmbed('nocllm')" id="btn-nocllm" class="px-4 py-2 rounded-lg text-xs font-bold transition">NOCLLM</button>
+            </div>
+        </div>
+
+        <div class="terminal-window rounded-2xl overflow-hidden flex flex-col card-shadow">
+            <div class="bg-slate-800 px-5 py-3 flex justify-between items-center border-b border-slate-700">
+                <div class="flex items-center space-x-2">
+                    <div class="flex space-x-1.5 mr-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                    </div>
+                    <span id="terminal-header" class="text-[10px] font-mono text-slate-400 uppercase tracking-[0.2em]">NOC LAB SERVER LOGS</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="text-[9px] text-emerald-400 font-bold bg-emerald-400/10 px-2 py-0.5 rounded tracking-tighter animate-pulse">STREAMING</span>
+                    <a id="external-link" href="#" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fas fa-external-link-alt text-xs"></i></a>
+                </div>
+            </div>
+            
+            <div class="iframe-container">
+                <iframe id="log-frame" src="" class="log-iframe"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- NocSignal & IoT Learning Access -->
+    <section id="nocsignal" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Tool: NocSignal -->
+            <div class="glass p-10 rounded-[2.5rem] border border-sky-500/20 relative overflow-hidden group">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-sky-500/10 rounded-full blur-3xl group-hover:bg-sky-500/20 transition"></div>
+                
+                <div class="w-14 h-14 bg-sky-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-sky-500/20">
+                    <i class="fas fa-satellite-dish text-2xl text-white"></i>
+                </div>
+                
+                <h3 class="text-3xl font-bold mb-4 text-white">NocSignal MQTT</h3>
+                <p class="text-slate-400 mb-8 leading-relaxed">
+                    Dashboard MQTT real-time dari Noc Lab untuk monitoring sensor dan kendali jarak jauh perangkat IoT.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://nocturnailed-community.github.io/NocSignal/" target="_blank" class="bg-sky-600 hover:bg-sky-500 px-8 py-3 rounded-xl font-bold transition flex items-center">
+                        Buka NocSignal <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                    <a href="https://github.com/Nocturnailed-Community/NocSignal" target="_blank" class="px-6 py-3 border border-slate-700 rounded-xl font-bold hover:bg-slate-800 transition">
+                        GitHub Repo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Education: Noc Academy -->
+            <div class="glass p-10 rounded-[2.5rem] border border-indigo-500/20 relative overflow-hidden group">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition"></div>
+                
+                <div class="w-14 h-14 bg-indigo-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-indigo-500/20">
+                    <i class="fas fa-graduation-cap text-2xl text-white"></i>
+                </div>
+                
+                <h3 class="text-3xl font-bold mb-4 text-white">Akses Pembelajaran</h3>
+                <p class="text-slate-400 mb-8 leading-relaxed">
+                    Pelajari implementasi NocML dan riset terbaru Noc Lab melalui portal resmi nocturnailed.com.
+                </p>
+                
+                <a href="https://nocturnailed.com" target="_blank" class="inline-flex items-center text-indigo-400 font-bold hover:text-indigo-300 transition text-lg group">
+                    Mulai Belajar di nocturnailed.com 
+                    <i class="fas fa-chevron-right ml-2 transform group-hover:translate-x-1 transition"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 bg-slate-700 rounded flex items-center justify-center">
+                    <i class="fas fa-microscope text-[10px] text-white"></i>
+                </div>
+                <span class="font-bold text-slate-400 uppercase tracking-widest text-xs">Noc Lab Hub</span>
+            </div>
+            <div class="flex space-x-6 text-slate-500 text-sm">
+                <a href="https://t.me/nocturnailed" target="_blank" class="hover:text-white transition">Telegram</a>
+                <a href="https://nocturnailed.com" target="_blank" class="hover:text-white transition">Academy</a>
+                <a href="https://github.com/Nocturnailed-Community" target="_blank" class="hover:text-white transition">GitHub</a>
+            </div>
+            <p class="text-slate-600 text-xs">&copy; 2020 - 2026 Noc Lab Community</p>
+        </div>
+    </footer>
+
+    <script>
+        const libraryConfig = {
+            nocml: 'https://downloads.arduino.cc/libraries/logs/github.com/Nocturnailed-Community/NocML/',
+            nockinematics: 'https://downloads.arduino.cc/libraries/logs/github.com/Nocturnailed-Community/NocKinematics/',
+            nocllm: 'https://downloads.arduino.cc/libraries/logs/github.com/Nocturnailed-Community/NocLLM/'
+        };
+
+        function switchEmbed(libKey) {
+            const url = libraryConfig[libKey];
+            const frame = document.getElementById('log-frame');
+            const header = document.getElementById('terminal-header');
+            const externalLink = document.getElementById('external-link');
+
+            // Update UI Button states
+            document.querySelectorAll('#logs button').forEach(b => {
+                b.classList.remove('active-log-tab', 'text-sky-400', 'bg-sky-500/10');
+                b.classList.add('text-slate-400');
+            });
+            
+            const activeBtn = document.getElementById(`btn-${libKey}`);
+            activeBtn.classList.add('active-log-tab', 'text-sky-400', 'bg-sky-500/10');
+            activeBtn.classList.remove('text-slate-400');
+
+            // Update Content
+            header.innerText = `NOC LAB FETCH: ${libKey.toUpperCase()}`;
+            externalLink.href = url;
+            frame.src = url;
+        }
+
+        window.onload = () => switchEmbed('nocml');
+    </script>
+</body>
+</html>
