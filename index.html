@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nocturnailed Lab | Open Source Library Collective</title>
+    <!-- Scripts & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -43,6 +44,7 @@
             width: 100%;
             height: 100%;
             border: none;
+            /* Invert light theme documentation to dark mode */
             filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(0.9);
         }
 
@@ -132,13 +134,13 @@
                 <p class="text-slate-500">Modular solutions for hardware and software intelligence.</p>
             </div>
             <div class="text-slate-400 text-sm font-mono bg-slate-900/50 px-4 py-2 rounded-lg border border-slate-800">
-                TOTAL_LIBRARIES: 08
+                TOTAL_LIBRARIES: 09
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- NocML -->
-            <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card relative group">
+            <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-sky-500/10 rounded-2xl flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-500">
                         <i class="fas fa-brain text-xl"></i>
@@ -147,10 +149,10 @@
                 </div>
                 <h4 class="text-xl font-bold text-white mb-3">NocML</h4>
                 <p class="text-slate-400 text-sm mb-6 leading-relaxed">Efficient ML library designed to run complex logic on resource-constrained Arduino microcontrollers.</p>
-                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
+                <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-800/50">
                     <a href="https://github.com/Nocturnailed-Community/NocML" target="_blank" class="text-xs font-bold text-sky-400 hover:text-white transition">GITHUB</a>
                     <span class="text-slate-700">|</span>
-                    <a href="https://www.arduinolibraries.info/libraries/noc-ml" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition uppercase">Arduino CC</a>
+                    <a href="https://registry.platformio.org/libraries/nocturnailed-community/NocML" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">PLATFORMIO</a>
                 </div>
             </div>
 
@@ -164,10 +166,10 @@
                 </div>
                 <h4 class="text-xl font-bold text-white mb-3">NocLLM</h4>
                 <p class="text-slate-400 text-sm mb-6 leading-relaxed">Large Language Model integration and inference optimization for Arduino and embedded systems.</p>
-                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
+                <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-800/50">
                     <a href="https://github.com/Nocturnailed-Community/NocLLM" target="_blank" class="text-xs font-bold text-purple-400 hover:text-white transition">GITHUB</a>
                     <span class="text-slate-700">|</span>
-                    <a href="https://www.arduinolibraries.info/libraries/noc-llm" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition uppercase">Arduino CC</a>
+                    <a href="https://registry.platformio.org/libraries/nocturnailed-community/NocLLM" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">PLATFORMIO</a>
                 </div>
             </div>
 
@@ -181,10 +183,27 @@
                 </div>
                 <h4 class="text-xl font-bold text-white mb-3">NocKinematics</h4>
                 <p class="text-slate-400 text-sm mb-6 leading-relaxed">Mathematical library for Inverse Kinematics and motion profiling in modular robotic systems.</p>
-                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
+                <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-800/50">
                     <a href="https://github.com/Nocturnailed-Community/NocKinematics" target="_blank" class="text-xs font-bold text-rose-400 hover:text-white transition">GITHUB</a>
                     <span class="text-slate-700">|</span>
-                    <a href="https://www.arduinolibraries.info/libraries/noc-kinematics" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition uppercase">Arduino CC</a>
+                    <a href="https://registry.platformio.org/libraries/nocturnailed-community/NocKinematics" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">PLATFORMIO</a>
+                </div>
+            </div>
+
+            <!-- NocLLM Dart -->
+            <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-comment-dots text-xl"></i>
+                    </div>
+                    <span class="badge-dart text-[10px] font-bold px-2.5 py-1 rounded-md">Dart/Flutter</span>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">NocLLM Dart</h4>
+                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Bringing LLM capabilities to Dart & Flutter apps with streamlined API and performance tuning.</p>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
+                    <a href="https://github.com/Nocturnailed-Community/NocLLM_Dart" target="_blank" class="text-xs font-bold text-indigo-400 hover:text-white transition">GITHUB</a>
+                    <span class="text-slate-700">|</span>
+                    <a href="https://pub.dev/packages/noc_llm_dart" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">PUB.DEV</a>
                 </div>
             </div>
 
@@ -208,21 +227,21 @@
             <!-- Sunda Language -->
             <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
-                    <div class="w-12 h-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
-                        <i class="fas fa-code text-xl"></i>
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-feather text-xl"></i>
                     </div>
                     <span class="badge-py text-[10px] font-bold px-2.5 py-1 rounded-md">Python/DSL</span>
                 </div>
                 <h4 class="text-xl font-bold text-white mb-3">Sunda Language</h4>
                 <p class="text-slate-400 text-sm mb-6 leading-relaxed">Coding with local wisdom. A library for building logic using Sundanese language syntax and structures.</p>
                 <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
-                    <a href="https://github.com/Muhammad-Ikhwan-Fathulloh/Sunda-Language" target="_blank" class="text-xs font-bold text-indigo-400 hover:text-white transition">GITHUB</a>
+                    <a href="https://github.com/Muhammad-Ikhwan-Fathulloh/Sunda-Language" target="_blank" class="text-xs font-bold text-amber-400 hover:text-white transition">GITHUB</a>
                     <span class="text-slate-700">|</span>
                     <a href="https://pypi.org/project/sunda-language/" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">PYPI</a>
                 </div>
             </div>
 
-            <!-- Saka-NLP -->
+            <!-- Saka NLP -->
             <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
@@ -239,7 +258,7 @@
                 </div>
             </div>
 
-            <!-- Saujana-NLP -->
+            <!-- Saujana NLP -->
             <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-orange-500/10 rounded-2xl flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors">
@@ -256,25 +275,26 @@
                 </div>
             </div>
 
-            <!-- NocSignal (Extra Slot) -->
-            <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group opacity-80">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="w-12 h-12 bg-sky-500/10 rounded-2xl flex items-center justify-center text-sky-400">
-                        <i class="fas fa-tower-broadcast text-xl"></i>
-                    </div>
-                    <span class="badge-py text-[10px] font-bold px-2.5 py-1 rounded-md">Web/IoT</span>
+            <!-- CTA Card -->
+            <div class="bg-gradient-to-br from-sky-600/20 to-indigo-600/20 p-8 rounded-[2rem] border border-sky-500/30 flex flex-col justify-center items-center text-center">
+                <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6 text-sky-400">
+                    <i class="fas fa-users text-2xl"></i>
                 </div>
-                <h4 class="text-xl font-bold text-white mb-3">NocSignal CLI</h4>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Command line interface for managing IoT signals and MQTT bridging directly from your terminal.</p>
-                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
-                    <a href="https://github.com/Nocturnailed-Community/NocSignal" target="_blank" class="text-xs font-bold text-sky-400 hover:text-white transition">GITHUB</a>
+                <h4 class="text-xl font-bold text-white mb-3">Build Together</h4>
+                <p class="text-slate-400 text-sm mb-6">Join our mission to democratize tech. Contribute code or share ideas in our community.</p>
+                <div class="flex flex-col w-full gap-3">
+                    <a href="https://t.me/nocturnailed" target="_blank" class="bg-sky-500 hover:bg-sky-400 py-3 rounded-xl text-xs font-bold text-white transition flex items-center justify-center">
+                        <i class="fab fa-telegram-plane mr-2"></i> TELEGRAM GROUP
+                    </a>
+                    <a href="https://github.com/Nocturnailed-Community" target="_blank" class="bg-white/5 hover:bg-white/10 border border-white/10 py-3 rounded-xl text-xs font-bold text-white transition">
+                        START CONTRIBUTING
+                    </a>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Monitoring Section -->
+    <!-- Build Monitoring Section -->
     <section id="monitoring" class="py-20 bg-slate-900/30 border-y border-slate-800/50 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
@@ -297,11 +317,13 @@
                             <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
                             <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
                         </div>
-                        <span id="terminal-header" class="text-[10px] font-mono text-slate-500 tracking-widest">NOCLAB://BUILD_ENV</span>
+                        <span id="terminal-header" class="text-[10px] font-mono text-slate-500 tracking-widest uppercase">NOCLAB://BUILD_ENV</span>
                     </div>
                     <div class="flex items-center gap-4">
                         <span class="text-[9px] text-sky-400 font-bold bg-sky-400/10 px-2 py-0.5 rounded tracking-tighter animate-pulse">LIVE STREAM</span>
-                        <a id="external-link" href="#" target="_blank" class="text-slate-500 hover:text-white transition"><i class="fas fa-external-link-alt text-xs"></i></a>
+                        <a id="external-link" href="#" target="_blank" class="text-slate-500 hover:text-white transition">
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
                     </div>
                 </div>
                 
@@ -312,7 +334,7 @@
         </div>
     </section>
 
-    <!-- NocSignal & IoT Tools -->
+    <!-- Tools Section -->
     <section id="tools" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
@@ -343,12 +365,18 @@
                 <p class="text-slate-400 mb-10 text-lg leading-relaxed">
                     Explore detailed documentation and usage examples for our regional language libraries and unique coding frameworks.
                 </p>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <a href="https://sunda-language.netlify.app/" target="_blank" class="px-6 py-4 bg-slate-800/50 border border-slate-700 hover:border-indigo-500/50 rounded-2xl text-[10px] font-bold text-white transition text-center uppercase tracking-wider">
                         SUNDA-LANGUAGE
                     </a>
                     <a href="https://saka-nlp.netlify.app/" target="_blank" class="px-6 py-4 bg-slate-800/50 border border-slate-700 hover:border-indigo-500/50 rounded-2xl text-[10px] font-bold text-white transition text-center uppercase tracking-wider">
                         SAKA-NLP
+                    </a>
+                    <a href="https://saujana-nlp.netlify.app/" target="_blank" class="px-6 py-4 bg-slate-800/50 border border-slate-700 hover:border-indigo-500/50 rounded-2xl text-[10px] font-bold text-white transition text-center uppercase tracking-wider">
+                        SAUJANA-NLP
+                    </a>
+                    <a href="https://registry.platformio.org/search?q=owner%3Anocturnailed-community" target="_blank" class="px-6 py-4 bg-indigo-500/10 border border-indigo-500/30 hover:bg-indigo-500/20 rounded-2xl text-[10px] font-bold text-indigo-400 transition text-center uppercase tracking-wider">
+                        PLATFORMIO REGISTRY
                     </a>
                 </div>
             </div>
@@ -394,20 +422,26 @@
             const header = document.getElementById('terminal-header');
             const externalLink = document.getElementById('external-link');
 
+            // Reset all buttons
             document.querySelectorAll('#monitoring button').forEach(b => {
                 b.classList.remove('active-log-tab', 'text-sky-400', 'bg-sky-400/10');
                 b.classList.add('text-slate-500');
             });
             
+            // Set active button
             const activeBtn = document.getElementById(`btn-${libKey}`);
-            activeBtn.classList.add('active-log-tab', 'text-sky-400', 'bg-sky-400/10');
-            activeBtn.classList.remove('text-slate-500');
+            if(activeBtn) {
+                activeBtn.classList.add('active-log-tab', 'text-sky-400', 'bg-sky-400/10');
+                activeBtn.classList.remove('text-slate-500');
+            }
 
+            // Update Terminal UI
             header.innerText = `NOCLAB://FETCHING_LOGS_${libKey.toUpperCase()}...`;
             externalLink.href = url;
             frame.src = url;
         }
 
+        // Initialize with first library
         window.onload = () => switchEmbed('nocml');
     </script>
 </body>
