@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nocturnailed Lab | Open Source Library Collective</title>
-    <!-- Scripts & Fonts -->
+    <title>Noc Lab | Open Source Library Collective</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -44,7 +43,6 @@
             width: 100%;
             height: 100%;
             border: none;
-            /* Invert light theme documentation to dark mode */
             filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(0.9);
         }
 
@@ -62,11 +60,11 @@
         .badge-py { background: #3776ab22; color: #3776ab; border: 1px solid #3776ab44; }
         .badge-cpp { background: #00599c22; color: #659ad2; border: 1px solid #00599c44; }
         .badge-dart { background: #0175c222; color: #0175c2; border: 1px solid #0175c244; }
+        .badge-cv { background: #eab30822; color: #eab308; border: 1px solid #eab30844; }
     </style>
 </head>
 <body class="min-h-screen selection:bg-sky-500/30">
 
-    <!-- Navigation -->
     <nav class="sticky top-0 z-50 glass border-b border-slate-800/50 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-3">
@@ -74,7 +72,7 @@
                     <i class="fas fa-microscope text-white text-lg"></i>
                 </div>
                 <div>
-                    <span class="text-xl font-bold tracking-tight block leading-none">Nocturnailed <span class="text-sky-400">Lab</span></span>
+                    <span class="text-xl font-bold tracking-tight block leading-none">Noc <span class="text-sky-400">Lab</span></span>
                     <span class="text-[10px] text-slate-500 uppercase tracking-[0.2em]">Open Source Collective</span>
                 </div>
             </div>
@@ -94,7 +92,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="relative pt-24 pb-20 px-6 overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-20 pointer-events-none">
             <div class="absolute top-[-10%] left-[20%] w-[400px] h-[400px] bg-sky-500 rounded-full blur-[120px]"></div>
@@ -113,7 +110,7 @@
                 Empowering the <br/><span class="gradient-text">Open Source</span> Era
             </h1>
             <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
-                Nocturnailed Lab is a curated collective of high-performance libraries for IoT, Robotics, Cross-Platform Machine Learning, and Innovative Coding Tools.
+                Noc Lab is a curated collective of high-performance libraries for IoT, Robotics, Cross-Platform Machine Learning, and Innovative Coding Tools.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <a href="#ecosystem" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-950 rounded-2xl font-bold hover:bg-slate-200 transition text-center">
@@ -126,7 +123,6 @@
         </div>
     </header>
 
-    <!-- Library Grid -->
     <section id="ecosystem" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
@@ -134,12 +130,11 @@
                 <p class="text-slate-500">Modular solutions for hardware and software intelligence.</p>
             </div>
             <div class="text-slate-400 text-sm font-mono bg-slate-900/50 px-4 py-2 rounded-lg border border-slate-800">
-                TOTAL_LIBRARIES: 10
+                TOTAL_LIBRARIES: 11
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- NocMotion -->
             <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-white transition-colors duration-500">
@@ -156,24 +151,22 @@
                 </div>
             </div>
 
-            <!-- NocKinematics -->
             <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
-                    <div class="w-12 h-12 bg-rose-500/10 rounded-2xl flex items-center justify-center text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-colors">
-                        <i class="fas fa-compass text-xl"></i>
+                    <div class="w-12 h-12 bg-yellow-500/10 rounded-2xl flex items-center justify-center text-yellow-400 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-eye text-xl"></i>
                     </div>
-                    <span class="badge-cpp text-[10px] font-bold px-2.5 py-1 rounded-md">Robotics/C++</span>
+                    <span class="badge-cv text-[10px] font-bold px-2.5 py-1 rounded-md">CV/Python</span>
                 </div>
-                <h4 class="text-xl font-bold text-white mb-3">NocKinematics</h4>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Mathematical library for Inverse Kinematics and motion profiling in modular robotic systems.</p>
-                <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-800/50">
-                    <a href="https://github.com/Nocturnailed-Community/NocKinematics" target="_blank" class="text-xs font-bold text-rose-400 hover:text-white transition">GITHUB</a>
+                <h4 class="text-xl font-bold text-white mb-3">Netra-CV</h4>
+                <p class="text-slate-400 text-sm mb-6 leading-relaxed">A specialized Computer Vision library for streamlined image processing and object detection tasks in Python.</p>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
+                    <a href="https://github.com/Muhammad-Ikhwan-Fathulloh/Netra-CV" target="_blank" class="text-xs font-bold text-yellow-400 hover:text-white transition">GITHUB</a>
                     <span class="text-slate-700">|</span>
-                    <a href="https://www.arduinolibraries.info/libraries/noc-kinematics" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">ARDUINO</a>
+                    <a href="https://pypi.org/project/netra-cv/" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">PYPI</a>
                 </div>
             </div>
 
-            <!-- NocML -->
             <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-sky-500/10 rounded-2xl flex items-center justify-center text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-500">
@@ -190,7 +183,6 @@
                 </div>
             </div>
 
-            <!-- NocLLM -->
             <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
@@ -207,41 +199,6 @@
                 </div>
             </div>
 
-            <!-- NocLLM Dart -->
-            <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="w-12 h-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
-                        <i class="fas fa-comment-dots text-xl"></i>
-                    </div>
-                    <span class="badge-dart text-[10px] font-bold px-2.5 py-1 rounded-md">Dart/Flutter</span>
-                </div>
-                <h4 class="text-xl font-bold text-white mb-3">NocLLM Dart</h4>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Bringing LLM capabilities to Dart & Flutter apps with streamlined API and performance tuning.</p>
-                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
-                    <a href="https://github.com/Nocturnailed-Community/NocLLM_Dart" target="_blank" class="text-xs font-bold text-indigo-400 hover:text-white transition">GITHUB</a>
-                    <span class="text-slate-700">|</span>
-                    <a href="https://pub.dev/packages/noc_llm_dart" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">PUB.DEV</a>
-                </div>
-            </div>
-
-            <!-- NocML Dart -->
-            <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                        <i class="fas fa-layer-group text-xl"></i>
-                    </div>
-                    <span class="badge-dart text-[10px] font-bold px-2.5 py-1 rounded-md">Dart/Flutter</span>
-                </div>
-                <h4 class="text-xl font-bold text-white mb-3">NocML Dart</h4>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Cross-platform ML engine for high-performance mobile and desktop apps using Dart and Flutter.</p>
-                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
-                    <a href="https://github.com/Nocturnailed-Community/NocML_Dart" target="_blank" class="text-xs font-bold text-blue-400 hover:text-white transition">GITHUB</a>
-                    <span class="text-slate-700">|</span>
-                    <a href="https://pub.dev/packages/noc_ml_dart" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">PUB.DEV</a>
-                </div>
-            </div>
-
-            <!-- Sunda Language -->
             <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-white transition-colors">
@@ -258,7 +215,6 @@
                 </div>
             </div>
 
-            <!-- Saka NLP -->
             <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
@@ -275,7 +231,38 @@
                 </div>
             </div>
 
-            <!-- Saujana NLP -->
+            <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-layer-group text-xl"></i>
+                    </div>
+                    <span class="badge-dart text-[10px] font-bold px-2.5 py-1 rounded-md">Dart/Flutter</span>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">NocML Dart</h4>
+                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Cross-platform ML engine for high-performance mobile and desktop apps using Dart and Flutter.</p>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
+                    <a href="https://github.com/Nocturnailed-Community/NocML_Dart" target="_blank" class="text-xs font-bold text-blue-400 hover:text-white transition">GITHUB</a>
+                    <span class="text-slate-700">|</span>
+                    <a href="https://pub.dev/packages/noc_ml_dart" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">PUB.DEV</a>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-rose-500/10 rounded-2xl flex items-center justify-center text-rose-400 group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-compass text-xl"></i>
+                    </div>
+                    <span class="badge-cpp text-[10px] font-bold px-2.5 py-1 rounded-md">Robotics/C++</span>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">NocKinematics</h4>
+                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Mathematical library for Inverse Kinematics and motion profiling in modular robotic systems.</p>
+                <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-800/50">
+                    <a href="https://github.com/Nocturnailed-Community/NocKinematics" target="_blank" class="text-xs font-bold text-rose-400 hover:text-white transition">GITHUB</a>
+                    <span class="text-slate-700">|</span>
+                    <a href="https://www.arduinolibraries.info/libraries/noc-kinematics" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">ARDUINO</a>
+                </div>
+            </div>
+
             <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
                 <div class="flex justify-between items-start mb-6">
                     <div class="w-12 h-12 bg-orange-500/10 rounded-2xl flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors">
@@ -292,7 +279,22 @@
                 </div>
             </div>
 
-            <!-- CTA Card -->
+            <div class="glass p-8 rounded-[2rem] border border-slate-800 hover-card group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-comment-dots text-xl"></i>
+                    </div>
+                    <span class="badge-dart text-[10px] font-bold px-2.5 py-1 rounded-md">Dart/Flutter</span>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">NocLLM Dart</h4>
+                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Bringing LLM capabilities to Dart & Flutter apps with streamlined API and performance tuning.</p>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/50">
+                    <a href="https://github.com/Nocturnailed-Community/NocLLM_Dart" target="_blank" class="text-xs font-bold text-indigo-400 hover:text-white transition">GITHUB</a>
+                    <span class="text-slate-700">|</span>
+                    <a href="https://pub.dev/packages/noc_llm_dart" target="_blank" class="text-xs font-bold text-slate-500 hover:text-white transition">PUB.DEV</a>
+                </div>
+            </div>
+
             <div class="bg-gradient-to-br from-sky-600/20 to-indigo-600/20 p-8 rounded-[2rem] border border-sky-500/30 flex flex-col justify-center items-center text-center">
                 <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6 text-sky-400">
                     <i class="fas fa-users text-2xl"></i>
@@ -311,7 +313,6 @@
         </div>
     </section>
 
-    <!-- Build Monitoring Section -->
     <section id="monitoring" class="py-20 bg-slate-900/30 border-y border-slate-800/50 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
@@ -352,11 +353,9 @@
         </div>
     </section>
 
-    <!-- Tools Section -->
     <section id="tools" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
-            <!-- Tool: NocSignal -->
             <div class="glass p-12 rounded-[3rem] border border-sky-500/10 relative overflow-hidden group">
                 <div class="absolute -right-20 -top-20 w-64 h-64 bg-sky-500/5 rounded-full blur-[80px]"></div>
                 <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-sky-600 rounded-3xl flex items-center justify-center mb-10 shadow-xl shadow-sky-500/20">
@@ -364,7 +363,7 @@
                 </div>
                 <h3 class="text-4xl font-bold mb-6 text-white leading-tight">NocSignal <br/><span class="text-sky-400 font-medium">MQTT Console</span></h3>
                 <p class="text-slate-400 mb-10 text-lg leading-relaxed">
-                    Advanced MQTT dashboard for real-time sensor telemetry and actuator control. Seamlessly integrates with the NocML and NocMotion ecosystem for smart device management.
+                    Advanced MQTT dashboard for real-time sensor telemetry and actuator control. Seamlessly integrates with the NocML and NocMotion ecosystem.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="https://nocturnailed-community.github.io/NocSignal/" target="_blank" class="bg-white text-slate-950 hover:bg-slate-200 px-8 py-4 rounded-2xl font-bold transition flex items-center shadow-lg">
@@ -373,7 +372,6 @@
                 </div>
             </div>
 
-            <!-- Library Documentation Sites -->
             <div class="glass p-12 rounded-[3rem] border border-indigo-500/10 relative overflow-hidden group">
                 <div class="absolute -right-20 -top-20 w-64 h-64 bg-indigo-500/5 rounded-full blur-[80px]"></div>
                 <div class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-3xl flex items-center justify-center mb-10 shadow-xl shadow-indigo-500/20">
@@ -384,6 +382,9 @@
                     Explore detailed documentation and usage examples for our regional language libraries and unique coding frameworks.
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="https://github.com/Muhammad-Ikhwan-Fathulloh/Netra-CV#readme" target="_blank" class="px-6 py-4 bg-slate-800/50 border border-slate-700 hover:border-yellow-500/50 rounded-2xl text-[10px] font-bold text-white transition text-center uppercase tracking-wider">
+                        NETRA-CV DOCS
+                    </a>
                     <a href="https://sunda-language.netlify.app/" target="_blank" class="px-6 py-4 bg-slate-800/50 border border-slate-700 hover:border-indigo-500/50 rounded-2xl text-[10px] font-bold text-white transition text-center uppercase tracking-wider">
                         SUNDA-LANGUAGE
                     </a>
@@ -393,16 +394,12 @@
                     <a href="https://saujana-nlp.netlify.app/" target="_blank" class="px-6 py-4 bg-slate-800/50 border border-slate-700 hover:border-indigo-500/50 rounded-2xl text-[10px] font-bold text-white transition text-center uppercase tracking-wider">
                         SAUJANA-NLP
                     </a>
-                    <a href="https://www.arduinolibraries.info/authors/nocturnailed-community" target="_blank" class="px-6 py-4 bg-indigo-500/10 border border-indigo-500/30 hover:bg-indigo-500/20 rounded-2xl text-[10px] font-bold text-indigo-400 transition text-center uppercase tracking-wider">
-                        ARDUINO REGISTRY
-                    </a>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-20 px-6 border-t border-slate-800 bg-black/40">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10 text-center md:text-left">
@@ -413,7 +410,7 @@
                         </div>
                         <span class="font-bold text-white text-xl">Noc Lab Hub</span>
                     </div>
-                    <p class="text-slate-500 text-sm max-w-xs">Driving innovation in IoT, Robotics and Language-based coding through open-source collaboration.</p>
+                    <p class="text-slate-500 text-sm max-w-xs">Driving innovation in IoT, Robotics and AI through open-source collaboration.</p>
                 </div>
                 <div class="flex flex-col items-center md:items-end gap-6">
                     <div class="flex space-x-8 text-slate-400 text-sm">
@@ -421,7 +418,7 @@
                         <a href="https://github.com/Nocturnailed-Community" target="_blank" class="hover:text-white transition">GitHub</a>
                         <a href="https://t.me/nocturnailed" target="_blank" class="hover:text-white transition">Telegram</a>
                     </div>
-                    <p class="text-slate-700 text-[10px] uppercase tracking-widest">&copy; 2020 - 2026 Nocturnailed Community Lab. All Rights Reserved.</p>
+                    <p class="text-slate-700 text-[10px] uppercase tracking-widest">&copy; 2020 - 2026 Noc Lab. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
